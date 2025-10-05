@@ -69,7 +69,7 @@ export const HeroSection = () => {
                 {[
                   { label: "Education", value: "BCA, MSI (2025)" },
                   { label: "Experience", value: "Web Dev Intern" },
-                  { label: "CGPA", value: "8.88" }
+                  // { label: "CGPA", value: "8.88" }
                 ].map((stat) => (
                   <div key={stat.label} className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors">
                     <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
@@ -102,7 +102,7 @@ export const HeroSection = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hover:scale-110 transition-transform cursor-pointer"
         aria-label="Scroll to About section"
       >
-        <ChevronDown className="w-8 h-8 text-primary" />
+        {/* <ChevronDown className="w-8 h-8 text-primary" /> */}
       </button>
     </section>
   );

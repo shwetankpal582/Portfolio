@@ -72,8 +72,22 @@ export const AboutSection = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-lg">Bachelor of Computer Applications</h4>
-                  <p className="text-primary">Maharaja Surajmal Institute</p>
+                  <p className="text-primary">Maharaja Surajmal Institute, Delhi</p>
                   <p className="text-sm text-foreground/60">November 2022 - June 2025</p>
+                  <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
+<br />
+<hr />
+<br />
+                  <h4 className="font-semibold text-lg">Intermediate</h4>
+                  <p className="text-primary">Shri Mahaprabhu Public School, Prayagraj</p>
+                  <p className="text-sm text-foreground/60">April 2020 - July 2021</p>
+                  <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
+<br />
+<hr />
+<br />
+                  <h4 className="font-semibold text-lg">High-School</h4>
+                  <p className="text-primary">Shri Mahaprabhu Public School, Prayagraj</p>
+                  <p className="text-sm text-foreground/60">April 2018 - May 2019</p>
                   <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
                 </div>
               </div>
@@ -93,9 +107,14 @@ export const AboutSection = () => {
                   <p className="text-primary">Satej Innovations Pvt. Ltd.</p>
                   <p className="text-sm text-foreground/60">July 2024 - August 2024</p>
                   <ul className="text-sm text-foreground/70 mt-3 space-y-2 list-disc list-inside">
-                    <li>Developed responsive web applications using React and modern CSS frameworks</li>
-                    <li>Collaborated with design team to implement UI/UX improvements</li>
-                    <li>Optimized application performance and cross-browser compatibility</li>
+                     <li>Managed and maintained the company’s e-commerce website built on  <b>WordPress</b>, ensuring consistent uptime and optimal performance.</li>
+                     <li>Customized <b>themes</b> and <b>plugins</b> to align with business and design requirements, improving user experience and functionality.</li>
+                     <li>Integrated and configured <b>WooCommerce</b> for efficient product management and secure checkout workflows.</li>
+                     <li>Enhanced website responsiveness across desktop and mobile devices using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>.</li>
+                     <li>Implemented performance optimizations including <b>caching</b>, <b>image compression</b>, and <b>database cleanup</b> to reduce load time.</li>
+                     <li>Performed regular <b>maintenance</b> tasks—plugin updates, backups, and security checks—to ensure site reliability.</li>
+                     <li>Collaborated with the design and marketing teams to deploy responsive UI updates and promotional layouts.</li>
+                     <li>Assisted in troubleshooting, debugging, and adding new features using <b>PHP</b> and <b>WordPress</b> tools.</li>
                   </ul>
                 </div>
               </div>
