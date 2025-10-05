@@ -5,78 +5,81 @@ export const ProjectsSection = () => {
   const [filter, setFilter] = useState<string>("all");
 
   const projects = [
-    {
-      title: "CodeDevForge",
-      description: "Full-stack blog application with rich text editor, user authentication, and real-time updates. Built with modern web technologies for optimal performance.",
-      techStack: ["ReactJS", "Tailwind CSS", "NodeJS", "Express", "MongoDB"],
-      repoLink: "https://github.com/shwetankpal582/CodeDevForge",
-      liveLink: "https://code-dev-forge.vercel.app/",
-      category: "fullstack"
-    },
-    {
-      title: "Application Tracker System (ATS)",
-      description: "Comprehensive ATS web application for managing resumes, job applications, and project tracking with intuitive UI and smart filtering.",
-      techStack: ["React", "TypeScript", "Tailwind", "REST API"],
-      repoLink: "https://github.com/shwetankpal582/Applicant-Tracking-System",
-      liveLink: "https://applicant-tracking-system-omega.vercel.app/",
-      category: "frontend"
-    },
-    {
-      title: "Cryptoscope",
-      description: "Cryptocurrency analysis and visualization platform with real-time data, interactive charts, and market insights.",
-      techStack: ["React", "Chart.js", "Crypto API", "Tailwind"],
-      repoLink: "https://github.com/shwetankpal582/Cryptoscope",
-      liveLink: "https://cryptoscope-six.vercel.app/",
-      category: "frontend"
-    },
-    {
-      title: "Ecommerce Platform",
-      description: "Full-featured MERN stack e-commerce platform with product management, shopping cart, payment integration, and admin dashboard.",
-      techStack: ["MongoDB", "Express", "React", "Node.js", "Stripe"],
-      repoLink: "https://github.com/shwetankpal582/Ecommerce",
-      liveLink: "https://ecommerce-ruddy-mu.vercel.app/",
-      category: "fullstack"
-    },
-    {
-      title: "Cloud Mock Website",
-      description: "Modern cloud services landing page featuring responsive design, smooth animations, and compelling call-to-actions.",
-      techStack: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-      repoLink: "https://github.com/shwetankpal582/Cloud-Mock",
-      liveLink: "https://cloud-mock-eosin.vercel.app/",
-      category: "frontend"
-    },
-    {
-      title: "Primetrade.ai",
-      description: "Trading platform with real-time dashboards, interactive charts, and data visualization for financial analytics.",
-      techStack: ["React", "D3.js", "Tailwind", "WebSocket"],
-      repoLink: "https://github.com/shwetankpal582/Primetrade.ai",
-      liveLink: "https://primetrade-phi.vercel.app/",
-      category: "frontend"
-    },
-    {
-      title: "Sundown (Clone)",
-      description: "Pixel-perfect recreation of Sundown Studio's website, demonstrating advanced CSS skills and attention to detail.",
-      techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
-      repoLink: "https://github.com/shwetankpal582/Sundown-Studio ",
-      liveLink: "https://sundown-studio-eta.vercel.app/",
-      category: "uiux"
-    },
-    {
-      title: "Toggle Button Darkweb",
-      description: "Interactive UI component library featuring custom toggle switches and dark mode implementation with smooth transitions.",
-      techStack: ["React", "CSS3", "JavaScript", "UI Components"],
-      repoLink: "https://github.com/shwetankpal582/Toggle-Button-Dark-Mode",
-      liveLink: "https://toggle-button-dark-mode.vercel.app/",
-      category: "frontend"
-    },
-    {
-      title: "CellStart ",
-      description: "Pharmaceutical company website assignment showcasing clean UI design, information architecture, and accessibility standards.",
-      techStack: ["React", "Tailwind", "Figma", "UI/UX"],
-      repoLink: "https://github.com/shwetankpal582/CellStart ",
-      liveLink: "https://cell-start-one.vercel.app/",
-      category: "uiux"
-    }
+    [
+  {
+    "title": "CodeDevForge",
+    "description": "Full-stack blog application with rich text editor, user authentication, and real-time updates. Built with modern web technologies for optimal performance.",
+    "techStack": ["ReactJS", "Tailwind CSS", "NodeJS", "Express", "MongoDB", "JWT", "Socket.io"],
+    "repoLink": "https://github.com/shwetankpal582/CodeDevForge",
+    "liveLink": "https://code-dev-forge.vercel.app/",
+    "category": "fullstack"
+  },
+  {
+    "title": "Application Tracker System (ATS)",
+    "description": "Comprehensive ATS web application for managing resumes, job applications, and project tracking with intuitive UI and smart filtering.",
+    "techStack": ["React", "TypeScript", "Tailwind", "REST API", "Axios", "Formik", "Yup"],
+    "repoLink": "https://github.com/shwetankpal582/Applicant-Tracking-System",
+    "liveLink": "https://applicant-tracking-system-omega.vercel.app/",
+    "category": "frontend"
+  },
+  {
+    "title": "Cryptoscope",
+    "description": "Cryptocurrency analysis and visualization platform with real-time data, interactive charts, and market insights.",
+    "techStack": ["React", "Chart.js", "Crypto API", "Tailwind", "Axios", "Redux", "React Router"],
+    "repoLink": "https://github.com/shwetankpal582/Cryptoscope",
+    "liveLink": "https://cryptoscope-six.vercel.app/",
+    "category": "frontend"
+  },
+  {
+    "title": "Ecommerce Platform",
+    "description": "Full-featured MERN stack e-commerce platform with product management, shopping cart, payment integration, and admin dashboard.",
+    "techStack": ["MongoDB", "Express", "React", "Node.js", "Stripe", "Redux", "JWT", "Axios"],
+    "repoLink": "https://github.com/shwetankpal582/Ecommerce",
+    "liveLink": "https://ecommerce-ruddy-mu.vercel.app/",
+    "category": "fullstack"
+  },
+  {
+    "title": "Cloud Mock Website",
+    "description": "Modern cloud services landing page featuring responsive design, smooth animations, and compelling call-to-actions.",
+    "techStack": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "GSAP", "ScrollMagic", "Figma"],
+    "repoLink": "https://github.com/shwetankpal582/Cloud-Mock",
+    "liveLink": "https://cloud-mock-eosin.vercel.app/",
+    "category": "frontend"
+  },
+  {
+    "title": "Primetrade.ai",
+    "description": "Trading platform with real-time dashboards, interactive charts, and data visualization for financial analytics.",
+    "techStack": ["React", "D3.js", "Tailwind", "WebSocket", "Redux", "Chart.js", "Axios"],
+    "repoLink": "https://github.com/shwetankpal582/Primetrade.ai",
+    "liveLink": "https://primetrade-phi.vercel.app/",
+    "category": "frontend"
+  },
+  {
+    "title": "Sundown (Clone)",
+    "description": "Pixel-perfect recreation of Sundown Studio's website, demonstrating advanced CSS skills and attention to detail.",
+    "techStack": ["HTML", "CSS", "JavaScript", "GSAP", "ScrollMagic", "Figma", "Responsive Design"],
+    "repoLink": "https://github.com/shwetankpal582/Sundown-Studio",
+    "liveLink": "https://sundown-studio-eta.vercel.app/",
+    "category": "frontend"
+  },
+  {
+    "title": "Toggle Button Darkweb",
+    "description": "Interactive UI component library featuring custom toggle switches and dark mode implementation with smooth transitions.",
+    "techStack": ["React", "CSS3", "JavaScript", "UI Components", "Tailwind", "Storybook", "Framer Motion"],
+    "repoLink": "https://github.com/shwetankpal582/Toggle-Button-Dark-Mode",
+    "liveLink": "https://toggle-button-dark-mode.vercel.app/",
+    "category": "frontend"
+  },
+  {
+    "title": "CellStart",
+    "description": "Pharmaceutical company website assignment showcasing clean UI design, information architecture, and accessibility standards.",
+    "techStack": ["React", "Tailwind", "Figma", "UI/UX", "JavaScript", "Axios", "Framer Motion"],
+    "repoLink": "https://github.com/shwetankpal582/CellStart",
+    "liveLink": "https://cell-start-one.vercel.app/",
+    "category": "frontend"
+  }
+]
+
   ];
 
   const categories = [
