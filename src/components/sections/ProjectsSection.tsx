@@ -5,14 +5,14 @@ export const ProjectsSection = () => {
   const [filter, setFilter] = useState<string>("all");
 
   const projects = [
-    [
   {
     "title": "CodeDevForge",
     "description": "Full-stack blog application with rich text editor, user authentication, and real-time updates. Built with modern web technologies for optimal performance.",
     "techStack": ["ReactJS", "Tailwind CSS", "NodeJS", "Express", "MongoDB", "JWT", "Socket.io"],
     "repoLink": "https://github.com/shwetankpal582/CodeDevForge",
     "liveLink": "https://code-dev-forge.vercel.app/",
-    "category": "fullstack"
+    "category": "fullstack",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Application Tracker System (ATS)",
@@ -20,7 +20,8 @@ export const ProjectsSection = () => {
     "techStack": ["React", "TypeScript", "Tailwind", "REST API", "Axios", "Formik", "Yup"],
     "repoLink": "https://github.com/shwetankpal582/Applicant-Tracking-System",
     "liveLink": "https://applicant-tracking-system-omega.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Cryptoscope",
@@ -28,7 +29,8 @@ export const ProjectsSection = () => {
     "techStack": ["React", "Chart.js", "Crypto API", "Tailwind", "Axios", "Redux", "React Router"],
     "repoLink": "https://github.com/shwetankpal582/Cryptoscope",
     "liveLink": "https://cryptoscope-six.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Ecommerce Platform",
@@ -36,7 +38,8 @@ export const ProjectsSection = () => {
     "techStack": ["MongoDB", "Express", "React", "Node.js", "Stripe", "Redux", "JWT", "Axios"],
     "repoLink": "https://github.com/shwetankpal582/Ecommerce",
     "liveLink": "https://ecommerce-ruddy-mu.vercel.app/",
-    "category": "fullstack"
+    "category": "fullstack",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Cloud Mock Website",
@@ -44,7 +47,8 @@ export const ProjectsSection = () => {
     "techStack": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "GSAP", "ScrollMagic", "Figma"],
     "repoLink": "https://github.com/shwetankpal582/Cloud-Mock",
     "liveLink": "https://cloud-mock-eosin.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Primetrade.ai",
@@ -52,7 +56,8 @@ export const ProjectsSection = () => {
     "techStack": ["React", "D3.js", "Tailwind", "WebSocket", "Redux", "Chart.js", "Axios"],
     "repoLink": "https://github.com/shwetankpal582/Primetrade.ai",
     "liveLink": "https://primetrade-phi.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Sundown (Clone)",
@@ -60,7 +65,8 @@ export const ProjectsSection = () => {
     "techStack": ["HTML", "CSS", "JavaScript", "GSAP", "ScrollMagic", "Figma", "Responsive Design"],
     "repoLink": "https://github.com/shwetankpal582/Sundown-Studio",
     "liveLink": "https://sundown-studio-eta.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   },
   {
     "title": "Toggle Button Darkweb",
@@ -68,7 +74,8 @@ export const ProjectsSection = () => {
     "techStack": ["React", "CSS3", "JavaScript", "UI Components", "Tailwind", "Storybook", "Framer Motion"],
     "repoLink": "https://github.com/shwetankpal582/Toggle-Button-Dark-Mode",
     "liveLink": "https://toggle-button-dark-mode.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   },
   {
     "title": "CellStart",
@@ -76,11 +83,10 @@ export const ProjectsSection = () => {
     "techStack": ["React", "Tailwind", "Figma", "UI/UX", "JavaScript", "Axios", "Framer Motion"],
     "repoLink": "https://github.com/shwetankpal582/CellStart",
     "liveLink": "https://cell-start-one.vercel.app/",
-    "category": "frontend"
+    "category": "frontend",
+    "image": "/placeholder.svg"
   }
-]
-
-  ];
+];
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -138,6 +144,7 @@ export const ProjectsSection = () => {
                   techStack={project.techStack}
                   repoLink={project.repoLink}
                   liveLink={project.liveLink}
+                  image={project.image}
                 />
               </div>
             ))}
