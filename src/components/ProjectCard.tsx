@@ -20,24 +20,33 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="glass rounded-2xl overflow-hidden group hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
-      {/* Project Image/Thumbnail */}
-      {image && (
-        <div className="h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
+      {/* Live Preview or Fallback Image */}
+      <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
+        {liveLink ? (
+          <iframe
+            src={liveLink}
+            title={title}
+            loading="lazy"
+            className="w-full h-full border-0 scale-[0.85] origin-top transition-transform duration-300 group-hover:scale-[0.9]"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          ></iframe>
+        ) : (
           <img
-            src={image}
+            src={image || "/placeholder.svg"}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           />
-        </div>
-      )}
-      
-      {/* Content */}
+        )}
+
+        {/* Subtle overlay for readability */}
+        <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition-all"></div>
+      </div>
+
+      {/* Project Content */}
       <div className="p-6 space-y-4">
         <h3 className="text-xl font-bold gradient-text">{title}</h3>
-        
-        <p className="text-sm text-foreground/70 line-clamp-2">
-          {description}
-        </p>
+
+        <p className="text-sm text-foreground/70 line-clamp-2">{description}</p>
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2">
@@ -53,18 +62,13 @@ export const ProjectCard = ({
 
         {/* Links */}
         <div className="flex gap-3 pt-2">
-          <Button
-            size="sm"
-            variant="outline"
-            className="flex-1 group/btn"
-            asChild
-          >
+          <Button size="sm" variant="outline" className="flex-1 group/btn" asChild>
             <a href={repoLink} target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-4 w-4 group-hover/btn:rotate-12 transition-transform" />
               Repo
             </a>
           </Button>
-          
+
           {liveLink ? (
             <Button size="sm" className="flex-1 group/btn" asChild>
               <a href={liveLink} target="_blank" rel="noopener noreferrer">
