@@ -24,6 +24,8 @@ export const ProjectCard = ({
       <div className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
         {liveLink ? (
           <iframe
+          height={192}
+            width={256}
             src={liveLink}
             title={title}
             loading="lazy"
