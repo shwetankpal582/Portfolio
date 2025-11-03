@@ -63,4 +63,8 @@ A modern, glassmorphism-themed personal portfolio built with React and Vite, fea
 ### Environment and Aliases
 
 *   Dev server runs on port `8080` (see `vite.config.ts`).
+<<<<<<< HEAD
 *   Import alias `@` points to `src`.
+=======
+*   Import alias `@` points to `src`.
+>>>>>>> c6ad47b8937dee175f53340bef92e603b5f808e8
