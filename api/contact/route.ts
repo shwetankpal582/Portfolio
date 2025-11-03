@@ -1,13 +1,8 @@
-import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
     const { name, email, subject, message } = await req.json();
-
-    if (!name || !email || !subject || !message) {
-      return NextResponse.json({ success: false, message: "All fields are required" }, { status: 400 });
-    }
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -17,16 +12,26 @@ export async function POST(req: Request) {
       },
     });
 
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+    const mailOptions = {
+      from: email,
       to: process.env.EMAIL_USER,
-      subject: `📬 ${subject} — from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    });
+      subject: `Portfolio Contact: ${subject}`,
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
+      `,
+    };
 
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ success: false, message: "Server Error" }, { status: 500 });
+    await transporter.sendMail(mailOptions);
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+    });
+  } catch (error: any) {
+    console.error("Email error:", error);
+    return new Response(JSON.stringify({ success: false, error: error.message }), {
+      status: 500,
+    });
   }
 }

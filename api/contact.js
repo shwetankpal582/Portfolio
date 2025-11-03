@@ -24,57 +24,40 @@ const Contact: React.FC = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-    const { name, email, subject, message } = formData;
+    const data = await response.json();
 
-    if (!name || !email || !subject || !message) {
+    if (data.success) {
       toast({
-        title: "⚠️ Missing Fields",
-        description: "Please fill in all fields before submitting.",
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        toast({
-          title: "✅ Message Sent!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
-        });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        toast({
-          title: "❌ Failed to Send",
-          description: data.message || "Something went wrong. Try again later.",
-        });
-      }
-    } catch (error) {
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
       toast({
-        title: "⚠️ Network Error",
-        description: "Unable to send your message. Please try again.",
+        title: "Failed to send",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
       });
-    } finally {
-      setLoading(false);
     }
-  };
+  } catch (err) {
+    toast({
+      title: "Network error",
+      description: "Unable to reach the server. Try again later.",
+      variant: "destructive",
+    });
+  }
+};
+
 
   return (
     <section id="contact" className="py-16 px-4 md:px-12 bg-gray-50 dark:bg-gray-900">
