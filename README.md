@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# Pal Folio Glass
 
-## Project info
+A modern, glassmorphism-themed personal portfolio built with React and Vite, featuring responsive UI components, sectioned pages (Home, About, Projects, Services, Contact), and a styled, accessible design.
 
-**URL**: https://lovable.dev/projects/cca368de-852b-4e2b-b59f-33aa7043883e
+**Live URL:** [https://pal-folio-glass.vercel.app/](https://pal-folio-glass.vercel.app/)
 
-## How can I edit this code?
+## Contact Information
 
-There are several ways of editing your application.
+*   **Phone:** +91 9451509640
+*   **Email:** shwetankpal582@gmail.com
+*   **GitHub:** [shwetankpal582](https://github.com/shwetankpal582)
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cca368de-852b-4e2b-b59f-33aa7043883e) and start prompting.
+*   **Core:** React 18, TypeScript, Vite
+*   **Routing/Data:** React Router, TanStack Query
+*   **UI/Styling:** Tailwind CSS, shadcn/ui, Radix UI, Lucide Icons, tailwind-merge, tailwindcss-animate
+*   **Forms/Validation:** React Hook Form, Zod, @hookform/resolvers
+*   **Charts/UX:** Recharts, Sonner (toasts), Embla carousel
+*   **Tooling:** ESLint, @vitejs/plugin-react-swc, PostCSS, Tailwind plugins
+*   **Email (server-side route):** Nodemailer (api/contact/route.ts)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Running Locally
 
-**Use your preferred IDE**
+### Requirements
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+*   Node.js (LTS)
+*   npm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Steps
 
-Follow these steps:
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2.  **(Optional, for contact form email) Create a `.env` file with:**
+    ```bash
+    EMAIL_USER=your_gmail_address
+    EMAIL_PASS=your_app_password
+    ```
+    **Note:** The `api/contact/route.ts` endpoint is designed for deployment environments. It may not be served by the Vite dev server without an adapter. You can test it after deployment or wire a local server accordingly.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3.  **Start the dev server:**
+    ```bash
+    npm run dev
+    ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4.  **Open the app at `http://localhost:8080`**
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Other Commands
 
-**Edit a file directly in GitHub**
+*   **Build/preview:**
+    ```bash
+    npm run build
+    npm run preview
+    ```
+*   **Lint:**
+    ```bash
+    npm run lint
+    ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Environment and Aliases
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/cca368de-852b-4e2b-b59f-33aa7043883e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+*   Dev server runs on port `8080` (see `vite.config.ts`).
+*   Import alias `@` points to `src`.
