@@ -18,27 +18,6 @@ const Projects = () => {
       repoLink: "https://github.com/shwetankpal582",
       liveLink: ""
     },
-    // {
-    //   title: "Cryptoscope",
-    //   description: "Cryptocurrency analysis and visualization platform with real-time data, interactive charts, and market insights.",
-    //   techStack: ["React", "Chart.js", "Crypto API", "Tailwind"],
-    //   repoLink: "https://github.com/shwetankpal582",
-    //   liveLink: ""
-    // },
-    // {
-    //   title: "Ecommerce Platform",
-    //   description: "Full-featured MERN stack e-commerce platform with product management, shopping cart, payment integration, and admin dashboard.",
-    //   techStack: ["MongoDB", "Express", "React", "Node.js", "Stripe"],
-    //   repoLink: "https://bit.ly/Ecomerce",
-    //   liveLink: ""
-    // },
-    // {
-    //   title: "Cloud Mock Website",
-    //   description: "Modern cloud services landing page featuring responsive design, smooth animations, and compelling call-to-actions.",
-    //   techStack: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-    //   repoLink: "https://github.com/shwetankpal582",
-    //   liveLink: ""
-    // },
     {
       title: "Primetrade.ai",
       description: "Trading platform with real-time dashboards, interactive charts, and data visualization for financial analytics.",
@@ -118,3 +97,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
