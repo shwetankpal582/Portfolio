@@ -80,7 +80,7 @@ export const HeroSection = () => {
       className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors hover:scale-105 transform duration-200"
     >
       <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
-      <p className="font-semibold mt-1 underline underline-offset-4 text-primary">{stat.value}</p>
+      <p className="font-semibold mt-1 text-primary">{stat.value}</p>
     </a>
   ) : (
     <div
