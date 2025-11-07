@@ -67,16 +67,32 @@ export const HeroSection = () => {
               {/* Quick Stats with glass cards */}
               <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                 {[
-                  { label: "Education", value: "BCA, MSI (2025)" },
-                  { label: "Experience", value: "Web Dev Intern" },
-                  { label: "UI/UX", value: "Design", src:"https://drive.google.com/drive/folders/19YZg0fKOVCFZ0ga-z6HHcXwRyGS0KvWY" },
-                  // { label: "CGPA", value: "8.88" }
-                ].map((stat) => (
-                  <div key={stat.label} className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors">
-                    <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
-                    <p className="font-semibold mt-1">{stat.value}</p>
-                  </div>
-                ))}
+  { label: "Education", value: "BCA, MSI (2025)" },
+  { label: "Experience", value: "Web Dev Intern" },
+  { label: "UI/UX", value: "Design", src: "https://drive.google.com/drive/folders/19YZg0fKOVCFZ0ga-z6HHcXwRyGS0KvWY" },
+].map((stat) => (
+  stat.src ? (
+    <a
+      key={stat.label}
+      href={stat.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors hover:scale-105 transform duration-200"
+    >
+      <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
+      <p className="font-semibold mt-1 underline underline-offset-4 text-primary">{stat.value}</p>
+    </a>
+  ) : (
+    <div
+      key={stat.label}
+      className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors"
+    >
+      <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
+      <p className="font-semibold mt-1">{stat.value}</p>
+    </div>
+  )
+))}
+
               </div>
 
               {/* CTA Buttons */}
