@@ -69,6 +69,7 @@ export const HeroSection = () => {
                 {[
                   { label: "Education", value: "BCA, MSI (2025)" },
                   { label: "Experience", value: "Web Dev Intern" },
+                  { label: "UI/UX", value: "Design", src:"https://drive.google.com/drive/folders/19YZg0fKOVCFZ0ga-z6HHcXwRyGS0KvWY" },
                   // { label: "CGPA", value: "8.88" }
                 ].map((stat) => (
                   <div key={stat.label} className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors">
