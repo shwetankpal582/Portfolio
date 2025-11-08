@@ -81,14 +81,14 @@ export const AboutSection = () => {
                   <h4 className="font-semibold text-lg">Intermediate</h4>
                   <p className="text-primary">Shri Mahaprabhu Public School, Prayagraj</p>
                   <p className="text-sm text-foreground/60">April 2020 - July 2021</p>
-                  <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
+                  <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.5</p>
 <br />
 <hr />
 <br />
                   <h4 className="font-semibold text-lg">High-School</h4>
                   <p className="text-primary">Shri Mahaprabhu Public School, Prayagraj</p>
                   <p className="text-sm text-foreground/60">April 2018 - May 2019</p>
-                  <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
+                  <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.5</p>
                 </div>
               </div>
             </div>
