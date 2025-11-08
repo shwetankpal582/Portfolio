@@ -21,17 +21,21 @@ export const ProjectCard = ({
   return (
     <div className="glass rounded-2xl overflow-hidden group hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
       
-      {/* Responsive Preview Container */}
-      <div className="aspect-[16/9] overflow-hidden rounded-t-2xl bg-muted">
+      {/* Perfectly Scaled Windowed Preview */}
+      <div className="relative overflow-hidden rounded-t-2xl bg-muted aspect-[16/9]">
         {liveLink ? (
-          <iframe
-            src={liveLink}
-            title={title}
-            loading="lazy"
-            scrolling="no"
-            className="w-full h-full border-0"
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-          ></iframe>
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Core trick: actual full-size iframe scaled down proportionally */}
+            <div className="absolute w-[200%] h-[200%] origin-center scale-[0.5] pointer-events-none">
+              <iframe
+                src={liveLink}
+                title={title}
+                loading="lazy"
+                className="w-full h-full border-0"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+              ></iframe>
+            </div>
+          </div>
         ) : (
           <img
             src={image || "/placeholder.svg"}
