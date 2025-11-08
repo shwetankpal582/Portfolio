@@ -29,7 +29,7 @@ export const ProjectCard = ({
             title={title}
             loading="lazy"
             scrolling="no"
-            className="w-full h-full border-0 scale-[0.85]"
+            className="w-full h-full border-0"
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           ></iframe>
         ) : (
