@@ -1,0 +1,1 @@
+- [ ] Remove group-hover:scale-110 scaling from the image preview in ProjectCard.tsx to eliminate scaling while preserving aspect ratio and hover effects.

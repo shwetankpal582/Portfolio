@@ -28,6 +28,7 @@ export const ProjectCard = ({
             src={liveLink}
             title={title}
             loading="lazy"
+            scrolling="no"
             className="w-full h-full border-0"
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           ></iframe>
@@ -35,7 +36,7 @@ export const ProjectCard = ({
           <img
             src={image || "/placeholder.svg"}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            className="w-full h-full object-cover"
           />
         )}
       </div>
