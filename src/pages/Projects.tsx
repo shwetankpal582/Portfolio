@@ -19,13 +19,6 @@ const Projects = () => {
       liveLink: ""
     },
     {
-      title: "Primetrade.ai",
-      description: "Trading platform with real-time dashboards, interactive charts, and data visualization for financial analytics.",
-      techStack: ["React", "D3.js", "Tailwind", "WebSocket"],
-      repoLink: "https://github.com/shwetankpal582",
-      liveLink: ""
-    },
-    {
       title: "Sundown (Clone)",
       description: "Pixel-perfect recreation of Sundown Studio's website, demonstrating advanced CSS skills and attention to detail.",
       techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
