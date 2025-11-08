@@ -21,14 +21,14 @@ export const ProjectCard = ({
   return (
     <div className="glass rounded-2xl overflow-hidden group hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
       
-      {/* Live Preview or Fallback Image */}
-      <div className="relative aspect-[16/9] bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden rounded-t-2xl">
+      {/* Responsive Preview Container */}
+      <div className="aspect-[16/9] overflow-hidden rounded-t-2xl bg-muted">
         {liveLink ? (
           <iframe
             src={liveLink}
             title={title}
             loading="lazy"
-            className="w-full h-full border-0 object-cover"
+            className="w-full h-full border-0"
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           ></iframe>
         ) : (
@@ -38,9 +38,6 @@ export const ProjectCard = ({
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           />
         )}
-
-        {/* Overlay for better readability */}
-        <div className="absolute inset-0 bg-black/10 hover:bg-black/0 transition-all"></div>
       </div>
 
       {/* Project Content */}
