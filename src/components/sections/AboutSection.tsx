@@ -36,7 +36,7 @@ export const AboutSection = () => {
 
             <div className="space-y-6">
               <h3 className="text-3xl font-bold">Professional Journey</h3>
-
+              
               <p className="text-foreground/80 leading-relaxed">
                 I'm Shwetank Pal, a results-driven Frontend Web Developer with a strong foundation 
                 in computer science and hands-on experience building scalable, responsive, and 
@@ -61,11 +61,7 @@ export const AboutSection = () => {
 
           {/* Education & Experience */}
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Education */}
-            <div
-              id="education"
-              className="glass-strong rounded-2xl p-8 space-y-6 hover:scale-105 transition-transform duration-300"
-            >
+            <div className="glass-strong rounded-2xl p-8 space-y-6 hover:scale-105 transition-transform duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                   <GraduationCap className="w-7 h-7 text-white" />
@@ -79,12 +75,16 @@ export const AboutSection = () => {
                   <p className="text-primary">Maharaja Surajmal Institute, Delhi</p>
                   <p className="text-sm text-foreground/60">November 2022 - June 2025</p>
                   <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
-                  <br /><hr /><br />
+<br />
+<hr />
+<br />
                   <h4 className="font-semibold text-lg">Intermediate</h4>
                   <p className="text-primary">Shri Mahaprabhu Public School, Prayagraj</p>
                   <p className="text-sm text-foreground/60">April 2020 - July 2021</p>
                   <p className="text-sm font-semibold text-foreground/80 mt-2">CGPA: 8.88</p>
-                  <br /><hr /><br />
+<br />
+<hr />
+<br />
                   <h4 className="font-semibold text-lg">High-School</h4>
                   <p className="text-primary">Shri Mahaprabhu Public School, Prayagraj</p>
                   <p className="text-sm text-foreground/60">April 2018 - May 2019</p>
@@ -93,11 +93,7 @@ export const AboutSection = () => {
               </div>
             </div>
 
-            {/* Experience */}
-            <div
-              id="experience"
-              className="glass-strong rounded-2xl p-8 space-y-6 hover:scale-105 transition-transform duration-300"
-            >
+            <div className="glass-strong rounded-2xl p-8 space-y-6 hover:scale-105 transition-transform duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary to-primary flex items-center justify-center">
                   <Briefcase className="w-7 h-7 text-white" />
@@ -111,13 +107,14 @@ export const AboutSection = () => {
                   <p className="text-primary">Satej Innovations Pvt. Ltd.</p>
                   <p className="text-sm text-foreground/60">July 2024 - August 2024</p>
                   <ul className="text-sm text-foreground/70 mt-3 space-y-2 list-disc list-inside">
-                    <li>Managed and maintained the company’s e-commerce website built on <b>WordPress</b>.</li>
-                    <li>Customized <b>themes</b> and <b>plugins</b> to align with design and functionality needs.</li>
-                    <li>Integrated and configured <b>WooCommerce</b> for product management and checkout.</li>
-                    <li>Enhanced responsiveness using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>.</li>
-                    <li>Implemented <b>performance optimizations</b> including caching and compression.</li>
-                    <li>Performed maintenance—plugin updates, backups, and security checks.</li>
-                    <li>Collaborated with design and marketing teams for UI updates and new features.</li>
+                     <li>Managed and maintained the company’s e-commerce website built on  <b>WordPress</b>, ensuring consistent uptime and optimal performance.</li>
+                     <li>Customized <b>themes</b> and <b>plugins</b> to align with business and design requirements, improving user experience and functionality.</li>
+                     <li>Integrated and configured <b>WooCommerce</b> for efficient product management and secure checkout workflows.</li>
+                     <li>Enhanced website responsiveness across desktop and mobile devices using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>.</li>
+                     <li>Implemented performance optimizations including <b>caching</b>, <b>image compression</b>, and <b>database cleanup</b> to reduce load time.</li>
+                     <li>Performed regular <b>maintenance</b> tasks—plugin updates, backups, and security checks—to ensure site reliability.</li>
+                     <li>Collaborated with the design and marketing teams to deploy responsive UI updates and promotional layouts.</li>
+                     <li>Assisted in troubleshooting, debugging, and adding new features using <b>PHP</b> and <b>WordPress</b> tools.</li>
                   </ul>
                 </div>
               </div>
@@ -128,9 +125,7 @@ export const AboutSection = () => {
           <div className="space-y-8">
             <div className="text-center">
               <h3 className="text-3xl font-bold">Core Competencies</h3>
-              <p className="text-foreground/70 mt-2">
-                Technologies and tools I work with
-              </p>
+              <p className="text-foreground/70 mt-2">Technologies and tools I work with</p>
             </div>
 
             <div className="flex flex-wrap justify-center gap-3">
