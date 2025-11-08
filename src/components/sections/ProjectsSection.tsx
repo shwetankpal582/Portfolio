@@ -23,7 +23,42 @@ export const ProjectsSection = () => {
     "category": "frontend",
     "image": "/placeholder.svg"
   },
-
+  {
+    "title": "Cryptoscope",
+    "description": "Cryptocurrency analysis and visualization platform with real-time data, interactive charts, and market insights.",
+    "techStack": ["React", "Chart.js", "Crypto API", "Tailwind", "Axios", "Redux", "React Router"],
+    "repoLink": "https://github.com/shwetankpal582/Cryptoscope",
+    "liveLink": "https://cryptoscope-six.vercel.app/",
+    "category": "frontend",
+    "image": "/placeholder.svg"
+  },
+  {
+    "title": "Ecommerce Platform",
+    "description": "Full-featured MERN stack e-commerce platform with product management, shopping cart, payment integration, and admin dashboard.",
+    "techStack": ["MongoDB", "Express", "React", "Node.js", "Stripe", "Redux", "JWT", "Axios"],
+    "repoLink": "https://github.com/shwetankpal582/Ecommerce",
+    "liveLink": "https://ecommerce-ruddy-mu.vercel.app/",
+    "category": "fullstack",
+    "image": "/placeholder.svg"
+  },
+  {
+    "title": "Cloud Mock Website",
+    "description": "Modern cloud services landing page featuring responsive design, smooth animations, and compelling call-to-actions.",
+    "techStack": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "GSAP", "ScrollMagic", "Figma"],
+    "repoLink": "https://github.com/shwetankpal582/Cloud-Mock",
+    "liveLink": "https://cloud-mock-eosin.vercel.app/",
+    "category": "frontend",
+    "image": "/placeholder.svg"
+  },
+  {
+    "title": "Primetrade.ai",
+    "description": "Trading platform with real-time dashboards, interactive charts, and data visualization for financial analytics.",
+    "techStack": ["React", "D3.js", "Tailwind", "WebSocket", "Redux", "Chart.js", "Axios"],
+    "repoLink": "https://github.com/shwetankpal582/Primetrade.ai",
+    "liveLink": "https://primetrade-phi.vercel.app/",
+    "category": "frontend",
+    "image": "/placeholder.svg"
+  },
   {
     "title": "Sundown (Clone)",
     "description": "Pixel-perfect recreation of Sundown Studio's website, demonstrating advanced CSS skills and attention to detail.",
