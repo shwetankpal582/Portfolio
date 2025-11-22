@@ -37,7 +37,7 @@ export const HeroSection = () => {
             {/* Content */}
             <div className="flex-1 text-center md:text-left space-y-6 animate-fade-in-up">
               <div className="space-y-2">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   <span className="gradient-text">Shwetank Pal</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-primary font-semibold">
@@ -50,7 +50,7 @@ export const HeroSection = () => {
                 {["React", "Tailwind", "Frontend Engineering"].map((skill) => (
                   <span
                     key={skill}
-                    className="glass px-5 py-2.5 rounded-full text-sm font-medium hover:scale-105 transition-transform cursor-default border border-primary/20"
+                    className="glass px-5 py-2.5 rounded-full text-sm font-medium hover:scale-105 transition-transform duration-300 cursor-default border border-primary/20"
                   >
                     {skill}
                   </span>
@@ -58,7 +58,7 @@ export const HeroSection = () => {
               </div>
 
               {/* Bio */}
-              <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl">
+              <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl lg:max-w-3xl">
                 I'm a results-driven Frontend Web Developer with a strong computer science foundation 
                 and hands-on experience building scalable, responsive, and business-focused web applications. 
                 Skilled in ReactJS, modern CSS (Tailwind), and UI/UX prototyping.
@@ -77,7 +77,7 @@ export const HeroSection = () => {
       href={stat.src}
       target="_blank"
       rel="noopener noreferrer"
-      className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors hover:scale-105 transform duration-200"
+      className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors hover:shadow-lg hover:scale-105 transform duration-300"
     >
       <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
       <p className="font-semibold mt-1 text-primary">{stat.value}</p>
@@ -85,7 +85,7 @@ export const HeroSection = () => {
   ) : (
     <div
       key={stat.label}
-      className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors"
+      className="glass px-4 py-3 rounded-xl text-center md:text-left border border-white/5 hover:border-primary/30 transition-colors hover:shadow-lg"
     >
       <p className="text-xs text-foreground/60 uppercase tracking-wider">{stat.label}</p>
       <p className="font-semibold mt-1">{stat.value}</p>
@@ -96,12 +96,12 @@ export const HeroSection = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="group" onClick={() => scrollToSection('projects')}>
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <Button size="lg" className="group relative overflow-hidden bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90 transform hover:-translate-y-0.5 transition-all duration-300 ease-out shadow-lg" onClick={() => scrollToSection('projects')}>
                   <Briefcase className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                   View Portfolio
                 </Button>
-                <Button size="lg" variant="outline" className="group" asChild>
+                <Button size="lg" variant="outline" className="group border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary transition-colors transform hover:-translate-y-0.5 duration-300 ease-out" asChild>
                   <a href="/resume.pdf" download>
                     <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                     Download Resume
@@ -116,10 +116,10 @@ export const HeroSection = () => {
       {/* Scroll Indicator */}
       <button 
         onClick={() => scrollToSection('about')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hover:scale-110 transition-transform cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hover:scale-110 transition-transform cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-2"
         aria-label="Scroll to About section"
       >
-        {/* <ChevronDown className="w-8 h-8 text-primary" /> */}
+         <ChevronDown className="w-8 h-8 text-primary" /> 
       </button>
     </section>
   );

@@ -1,8 +1,21 @@
 import nodemailer from "nodemailer";
+import dbConnect from "../../src/lib/dbConnect";
+import Message from "../../src/lib/Message";
 
 export async function POST(req: Request) {
   try {
     const { name, email, subject, message } = await req.json();
+
+    await dbConnect();
+
+    const newMessage = new Message({
+      name,
+      email,
+      subject,
+      message,
+    });
+
+    await newMessage.save();
 
     const transporter = nodemailer.createTransport({
       service: "gmail",

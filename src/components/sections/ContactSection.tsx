@@ -72,11 +72,11 @@ export const ContactSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Info */}
             <div className="space-y-8">
               <div className="glass-strong rounded-2xl p-8 space-y-6">
-                <h3 className="text-2xl font-bold">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
                 
                 <div className="space-y-4">
                   <a
@@ -145,7 +145,7 @@ export const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                    className="bg-background/50 border-white/10"
+                    className="bg-background/50 border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -161,7 +161,7 @@ export const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="your.email@example.com"
                     required
-                    className="bg-background/50 border-white/10"
+                    className="bg-background/50 border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -176,7 +176,7 @@ export const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="What's this about?"
                     required
-                    className="bg-background/50 border-white/10"
+                    className="bg-background/50 border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -192,7 +192,7 @@ export const ContactSection = () => {
                     placeholder="Tell me about your project..."
                     rows={6}
                     required
-                    className="bg-background/50 resize-none border-white/10"
+                    className="bg-background/50 resize-none border-white/10 focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
