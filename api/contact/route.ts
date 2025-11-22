@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
-import dbConnect from "../../src/lib/dbConnect";
-import Message from "../../src/lib/Message";
+import dbConnect from "../../src/lib/dbConnect.js";
+import Message from "../../src/lib/Message.js";
 
 export async function POST(req: Request) {
   try {
@@ -44,7 +44,8 @@ export async function POST(req: Request) {
     });
   } catch (error: any) {
     console.error("Email error:", error);
-    return new Response(JSON.stringify({ success: false, error: error.message }), {
+    const errorMessage = error instanceof Error ? error.message : 'An unknown server error occurred.';
+    return new Response(JSON.stringify({ success: false, error: errorMessage }), {
       status: 500,
     });
   }
