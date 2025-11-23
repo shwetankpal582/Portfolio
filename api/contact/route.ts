@@ -17,7 +17,6 @@ export async function POST(req: Request) {
 
     await newMessage.save();
 
-    console.log("EMAIL_USER is defined:", !!process.env.EMAIL_USER);
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
