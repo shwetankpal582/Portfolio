@@ -2,9 +2,16 @@ import nodemailer from "nodemailer";
 import dbConnect from "../../lib/dbConnect.js";
 import Message from "../../lib/Message.js";
 
+interface ContactRequestBody {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
 export async function POST(req: Request) {
   try {
-    const { name, email, subject, message } = await req.json();
+    const { name, email, subject, message } = (await req.json()) as ContactRequestBody;
 
     await dbConnect();
 
