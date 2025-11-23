@@ -24,6 +24,10 @@ export async function POST(req: Request) {
 
     await newMessage.save();
 
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      throw new Error("Please define the EMAIL_USER and EMAIL_PASS environment variables.");
+    }
+
     console.log("EMAIL_USER is defined:", !!process.env.EMAIL_USER);
     const transporter = nodemailer.createTransport({
       service: "gmail",
