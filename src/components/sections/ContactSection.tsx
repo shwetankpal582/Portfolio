@@ -30,7 +30,7 @@ export const ContactSection = () => {
       if (res.ok && data?.success) {
         toast({
           title: "Message Sent!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
+          description: "Your message has been sent successfully. I will get back to you as soon as possible.",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
@@ -40,10 +40,11 @@ export const ContactSection = () => {
           variant: "destructive",
         });
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const error = err as Error;
       toast({
         title: "Network error",
-        description: err?.message || "Unable to reach the server. Try again later.",
+        description: error?.message || "Unable to reach the server. Try again later.",
         variant: "destructive",
       });
     } finally {
