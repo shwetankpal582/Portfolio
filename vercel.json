@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/**/*.ts": { "runtime": "nodejs@22.x" }
+    "api/**/*.ts": { "runtime": "vercel-node@20.0.0" }
   },
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" }
