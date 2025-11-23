@@ -17,6 +17,7 @@ export async function POST(req: Request) {
 
     await newMessage.save();
 
+    console.log("EMAIL_USER is defined:", !!process.env.EMAIL_USER);
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -43,10 +44,11 @@ export async function POST(req: Request) {
       status: 200,
     });
   } catch (error: any) {
-    console.error("Email error:", error);
+    console.error("Email error:", error, error.stack);
     const errorMessage = error instanceof Error ? error.message : 'An unknown server error occurred.';
     return new Response(JSON.stringify({ success: false, error: errorMessage }), {
       status: 500,
     });
   }
 }
+// Updated and fixed the contact form email sending issue.

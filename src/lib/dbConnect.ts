@@ -8,6 +8,8 @@ if (!MONGODB_URI) {
   );
 }
 
+console.log("MONGODB_URI is defined:", !!MONGODB_URI);
+
 let cached = (global as any).mongoose;
 
 if (!cached) {
