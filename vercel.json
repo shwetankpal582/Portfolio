@@ -1,8 +1,19 @@
 {
-  "rewrites": [
+  "functions": {
+    "backend/api/**/*.ts": {
+      "runtime": "nodejs20.x",
+      "memory": 1024,
+      "maxDuration": 10,
+      "includeFiles": [
+        "backend/dist/lib/**"
+      ],
+      "launcherType": "Nodejs"
+    }
+  },
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/backend/api/$1"
+      "src": "/api/(.*)",
+      "dest": "/backend/api/$1"
     }
   ]
 }
