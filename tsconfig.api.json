@@ -8,9 +8,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "rootDir": "./src"
+    "outDir": "./backend/dist",
+    "rootDir": "./backend"
   },
-  "include": ["src/api/**/*.ts", "src/lib/**/*.ts"],
+  "include": ["backend/api/**/*.ts", "backend/lib/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
-import dbConnect from "../../lib/dbConnect.js";
-import Message from "../../lib/Message.js";
+import dbConnect from "../../lib/dbConnect.ts";
+import Message from "../../lib/Message.ts";
 
 interface ContactRequestBody {
   name: string;
@@ -21,6 +21,9 @@ export async function POST(req: Request) {
       subject,
       message,
     });
+
+    console.log("res",req);
+    console.log("newMessage",newMessage)
 
     await newMessage.save();
 
