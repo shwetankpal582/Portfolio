@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
-import dbConnect from "../lib/dbConnect.js";
-import Message from "../lib/Message.js";
+import dbConnect from "../../lib/dbConnect";
+import Message from "../../lib/Message";
 
 interface ContactRequestBody {
   name: string;
