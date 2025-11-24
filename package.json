@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev:frontend": "vite",
+    "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "vite build",
     "build:frontend:dev": "vite build --mode development",
     "dev:backend": "nodemon --watch backend --exec ts-node backend/server.ts",
