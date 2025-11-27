@@ -3,12 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import Home from "../src/pages/Home";
+import About from "../src/pages/About";
+import Services from "../src/pages/Services";
+import Projects from "../src/pages/Projects";
+import Contact from "../src/pages/Contact";
+import NotFound from "../src/pages/NotFound";
+import ReflectiveBubbleBackground from "@/components/lightswind/ReflectiveBubbleBackground";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,14 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <ReflectiveBubbleBackground
+        className="fixed inset-0 z-[-1]"
+        particleColor="#60a5fa"
+        particleSize={20}
+        spawnInterval={200}
+        blurStrength={8}
+        backdropBlurAmount="sm"
+      />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

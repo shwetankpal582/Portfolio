@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./frontend/pages/**/*.{ts,tsx}", "./frontend/components/**/*.{ts,tsx}", "./frontend/app/**/*.{ts,tsx}", "./frontend/**/*.{ts,tsx}"],
+  content: ["./frontend/pages/**/*.{ts,tsx}", "./frontend/components/**/*.{ts,tsx}", "./frontend/app/**/*.{ts,tsx}", "./frontend/**/*.{ts,tsx}", "./src/pages/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {

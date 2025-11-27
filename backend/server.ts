@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
-import { POST } from './api/contact/route.js';
+import { POST } from './api/contact/route.ts';
 
 const app = express();
 const port = 3001; // Choose a different port for the backend
