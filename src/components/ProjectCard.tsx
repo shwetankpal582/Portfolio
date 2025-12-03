@@ -20,7 +20,7 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div className="glass rounded-2xl overflow-hidden group hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
-      
+
       {/* Perfectly Scaled Windowed Preview */}
       <div className="relative overflow-hidden rounded-t-2xl bg-muted aspect-[16/9]">
         {liveLink ? (
@@ -47,9 +47,9 @@ export const ProjectCard = ({
 
       {/* Project Content */}
       <div className="p-6 space-y-4">
-        <h3 className="text-xl font-bold gradient-text">{title}</h3>
+        <h3 className="text-xl font-bold gradient-text text-foreground">{title}</h3>
 
-        <p className="text-sm text-foreground/70 line-clamp-2">{description}</p>
+        <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2">

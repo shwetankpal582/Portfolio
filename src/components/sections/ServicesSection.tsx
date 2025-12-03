@@ -32,15 +32,15 @@ export const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-32 relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto space-y-16">
+    <section id="services" className="py-16 md:py-20 relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto space-y-12 md:space-y-14">
           {/* Header */}
-          <div className="text-center space-y-4 animate-fade-in">
-            <h2 className="text-5xl md:text-6xl font-bold gradient-text">
+          <div className="text-center space-y-4 animate-fade-in text-foreground">
+            <h2 className="text-5xl md:text-6xl font-bold gradient-text text-foreground">
               Services
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Comprehensive frontend development and design solutions tailored to your needs
             </p>
           </div>
@@ -59,9 +59,9 @@ export const ServicesSection = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="glass-strong rounded-3xl p-12 text-center space-y-6 hover:scale-105 transition-transform duration-300">
-            <h3 className="text-3xl font-bold">Ready to Start Your Project?</h3>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
+          <div className="glass-strong rounded-3xl p-10 text-center space-y-6 hover:scale-105 transition-transform duration-300">
+            <h3 className="text-3xl font-bold text-foreground">Ready to Start Your Project?</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Let's collaborate to bring your ideas to life with clean code and beautiful design.
             </p>
             <Button size="lg" onClick={scrollToContact}>

@@ -5,53 +5,53 @@ export const ProjectsSection = () => {
   const [filter, setFilter] = useState<string>("all");
 
   const projects = [
-  {
-    "title": "CodeDevForge",
-    "description": "Full-stack blog application with rich text editor, user authentication, and real-time updates. Built with modern web technologies for optimal performance.",
-    "techStack": ["ReactJS", "Tailwind CSS", "NodeJS", "Express", "MongoDB", "JWT", "Socket.io"],
-    "repoLink": "https://github.com/shwetankpal582/CodeDevForge",
-    "liveLink": "https://code-dev-forge.vercel.app/",
-    "category": "fullstack",
-    "image": "/placeholder.svg"
-  },
-  {
-    "title": "Application Tracker System (ATS)",
-    "description": "Comprehensive ATS web application for managing resumes, job applications, and project tracking with intuitive UI and smart filtering.",
-    "techStack": ["React", "TypeScript", "Tailwind", "REST API", "Axios", "Formik", "Yup"],
-    "repoLink": "https://github.com/shwetankpal582/Applicant-Tracking-System",
-    "liveLink": "https://applicant-tracking-system-omega.vercel.app/",
-    "category": "frontend",
-    "image": "/placeholder.svg"
-  },
+    {
+      "title": "CodeDevForge",
+      "description": "Full-stack blog application with rich text editor, user authentication, and real-time updates. Built with modern web technologies for optimal performance.",
+      "techStack": ["ReactJS", "Tailwind CSS", "NodeJS", "Express", "MongoDB", "JWT", "Socket.io"],
+      "repoLink": "https://github.com/shwetankpal582/CodeDevForge",
+      "liveLink": "https://code-dev-forge.vercel.app/",
+      "category": "fullstack",
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "Application Tracker System (ATS)",
+      "description": "Comprehensive ATS web application for managing resumes, job applications, and project tracking with intuitive UI and smart filtering.",
+      "techStack": ["React", "TypeScript", "Tailwind", "REST API", "Axios", "Formik", "Yup"],
+      "repoLink": "https://github.com/shwetankpal582/Applicant-Tracking-System",
+      "liveLink": "https://applicant-tracking-system-omega.vercel.app/",
+      "category": "frontend",
+      "image": "/placeholder.svg"
+    },
 
-  {
-    "title": "Sundown (Clone)",
-    "description": "Pixel-perfect recreation of Sundown Studio's website, demonstrating advanced CSS skills and attention to detail.",
-    "techStack": ["HTML", "CSS", "JavaScript", "GSAP", "ScrollMagic", "Figma", "Responsive Design"],
-    "repoLink": "https://github.com/shwetankpal582/Sundown-Studio",
-    "liveLink": "https://sundown-studio-eta.vercel.app/",
-    "category": "frontend",
-    "image": "/placeholder.svg"
-  },
-  {
-    "title": "Toggle Button Darkweb",
-    "description": "Interactive UI component library featuring custom toggle switches and dark mode implementation with smooth transitions.",
-    "techStack": ["React", "CSS3", "JavaScript", "UI Components", "Tailwind", "Storybook", "Framer Motion"],
-    "repoLink": "https://github.com/shwetankpal582/Toggle-Button-Dark-Mode",
-    "liveLink": "https://toggle-button-dark-mode.vercel.app/",
-    "category": "frontend",
-    "image": "/placeholder.svg"
-  },
-  {
-    "title": "CellStart",
-    "description": "Pharmaceutical company website assignment showcasing clean UI design, information architecture, and accessibility standards.",
-    "techStack": ["React", "Tailwind", "Figma", "UI/UX", "JavaScript", "Axios", "Framer Motion"],
-    "repoLink": "https://github.com/shwetankpal582/CellStart",
-    "liveLink": "https://cell-start-one.vercel.app/",
-    "category": "frontend",
-    "image": "/placeholder.svg"
-  }
-];
+    {
+      "title": "Sundown (Clone)",
+      "description": "Pixel-perfect recreation of Sundown Studio's website, demonstrating advanced CSS skills and attention to detail.",
+      "techStack": ["HTML", "CSS", "JavaScript", "GSAP", "ScrollMagic", "Figma", "Responsive Design"],
+      "repoLink": "https://github.com/shwetankpal582/Sundown-Studio",
+      "liveLink": "https://sundown-studio-eta.vercel.app/",
+      "category": "frontend",
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "Toggle Button Darkweb",
+      "description": "Interactive UI component library featuring custom toggle switches and dark mode implementation with smooth transitions.",
+      "techStack": ["React", "CSS3", "JavaScript", "UI Components", "Tailwind", "Storybook", "Framer Motion"],
+      "repoLink": "https://github.com/shwetankpal582/Toggle-Button-Dark-Mode",
+      "liveLink": "https://toggle-button-dark-mode.vercel.app/",
+      "category": "frontend",
+      "image": "/placeholder.svg"
+    },
+    {
+      "title": "CellStart",
+      "description": "Pharmaceutical company website assignment showcasing clean UI design, information architecture, and accessibility standards.",
+      "techStack": ["React", "Tailwind", "Figma", "UI/UX", "JavaScript", "Axios", "Framer Motion"],
+      "repoLink": "https://github.com/shwetankpal582/CellStart",
+      "liveLink": "https://cell-start-one.vercel.app/",
+      "category": "frontend",
+      "image": "/placeholder.svg"
+    }
+  ];
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -60,20 +60,20 @@ export const ProjectsSection = () => {
     { id: "uiux", label: "UI/UX" }
   ];
 
-  const filteredProjects = filter === "all" 
-    ? projects 
+  const filteredProjects = filter === "all"
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
-    <section id="projects" className="py-32 relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto space-y-16">
+    <section id="projects" className="py-16 md:py-20 relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto space-y-12 md:space-y-14">
           {/* Header */}
-          <div className="text-center space-y-4 animate-fade-in">
-            <h2 className="text-5xl md:text-6xl font-bold gradient-text">
+          <div className="text-center space-y-4 animate-fade-in text-foreground">
+            <h2 className="text-5xl md:text-6xl font-bold gradient-text text-foreground">
               Projects
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A showcase of my frontend development work, from full-stack applications to UI components
             </p>
           </div>
@@ -84,11 +84,10 @@ export const ProjectsSection = () => {
               <button
                 key={cat.id}
                 onClick={() => setFilter(cat.id)}
-                className={`glass px-6 py-3 rounded-full font-medium transition-all ${
-                  filter === cat.id 
-                    ? "bg-primary/20 border-2 border-primary text-primary scale-105" 
-                    : "border border-white/10 hover:border-primary/30 hover:scale-105"
-                }`}
+                className={`glass px-6 py-3 rounded-full font-medium transition-all ${filter === cat.id
+                  ? "bg-primary/20 border-2 border-primary text-primary scale-105"
+                  : "border border-white/10 hover:border-primary/30 hover:scale-105 text-foreground"
+                  }`}
               >
                 {cat.label}
               </button>
@@ -98,7 +97,7 @@ export const ProjectsSection = () => {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <div 
+              <div
                 key={index}
                 className="animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -116,10 +115,10 @@ export const ProjectsSection = () => {
           </div>
 
           {/* Bottom CTA */}
-          <div className="glass-strong rounded-3xl p-12 text-center space-y-6 hover:scale-105 transition-transform duration-300">
-            <h3 className="text-3xl font-bold">Interested in Working Together?</h3>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
-              These projects demonstrate my commitment to quality code and user-centered design. 
+          <div className="glass-strong rounded-3xl p-10 text-center space-y-6 hover:scale-105 transition-transform duration-300">
+            <h3 className="text-3xl font-bold text-foreground">Interested in Working Together?</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              These projects demonstrate my commitment to quality code and user-centered design.
               Let's discuss how I can contribute to your team or project.
             </p>
           </div>

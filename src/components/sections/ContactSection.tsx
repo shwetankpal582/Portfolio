@@ -58,17 +58,16 @@ export const ContactSection = () => {
       [e.target.name]: e.target.value
     }));
   };
-
   return (
-    <section id="contact" className="py-32 relative">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto space-y-16">
+    <section id="contact" className="py-16 md:py-20 relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto space-y-12 md:space-y-14">
           {/* Header */}
-          <div className="text-center space-y-4 animate-fade-in">
-            <h2 className="text-5xl md:text-6xl font-bold gradient-text">
+          <div className="text-center space-y-4 animate-fade-in text-foreground">
+            <h2 className="text-5xl md:text-6xl font-bold gradient-text text-foreground">
               Get In Touch
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Have a project in mind? Let's discuss how we can work together
             </p>
           </div>
@@ -76,9 +75,9 @@ export const ContactSection = () => {
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Info */}
             <div className="space-y-8">
-              <div className="glass-strong rounded-2xl p-8 space-y-6">
+              <div className="glass-strong rounded-2xl p-8 space-y-6 text-foreground">
                 <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-                
+
                 <div className="space-y-4">
                   <a
                     href="mailto:shwetankpal582@gmail.com"
@@ -88,8 +87,8 @@ export const ContactSection = () => {
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-foreground/60">Email</p>
-                      <p className="font-semibold break-all">shwetankpal582@gmail.com</p>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <p className="font-semibold break-all text-foreground">shwetankpal582@gmail.com</p>
                     </div>
                   </a>
 
@@ -101,8 +100,8 @@ export const ContactSection = () => {
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-foreground/60">Phone</p>
-                      <p className="font-semibold">+91-9451509640</p>
+                      <p className="text-sm text-muted-foreground">Phone</p>
+                      <p className="font-semibold text-foreground">+91-9451509640</p>
                     </div>
                   </a>
 
@@ -116,24 +115,24 @@ export const ContactSection = () => {
                       <Github className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm text-foreground/60">GitHub</p>
-                      <p className="font-semibold">@shwetankpal582</p>
+                      <p className="text-sm text-muted-foreground">GitHub</p>
+                      <p className="font-semibold text-foreground">@shwetankpal582</p>
                     </div>
                   </a>
                 </div>
               </div>
 
-              <div className="glass-strong rounded-2xl p-8 space-y-4">
+              <div className="glass-strong rounded-2xl p-8 space-y-4 text-foreground">
                 <h3 className="text-xl font-bold">Availability</h3>
-                <p className="text-foreground/70">
-                  I'm currently available for freelance projects and full-time opportunities. 
+                <p className="text-muted-foreground">
+                  I'm currently available for freelance projects and full-time opportunities.
                   Feel free to reach out to discuss your next project!
                 </p>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="glass-strong rounded-2xl p-8">
+            <div className="glass-strong rounded-2xl p-8 text-white">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">

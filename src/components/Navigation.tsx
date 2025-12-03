@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "./Logo";
@@ -17,7 +17,13 @@ export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,11 +50,36 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
+  const navigateToSection = useCallback((sectionId: string) => {
+    if (!sectionId) return;
+    if (isHomePage) {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/", { state: { scrollTo: sectionId } });
+    }
+  }, [isHomePage, navigate, scrollToSection]);
+
+  useEffect(() => {
+    if (!isHomePage) return;
+    const state = (location.state as Record<string, unknown>) || {};
+    const scrollTarget = typeof state.scrollTo === "string" ? state.scrollTo : null;
+
+    if (scrollTarget) {
+      const timeout = window.setTimeout(() => scrollToSection(scrollTarget), 50);
+      const { scrollTo, ...rest } = state;
+      navigate(location.pathname, {
+        replace: true,
+        state: Object.keys(rest).length ? rest : null,
+      });
+
+      return () => window.clearTimeout(timeout);
+    }
+  }, [isHomePage, location, navigate, scrollToSection]);
+
   const handleNavClick = (e: React.MouseEvent, link: typeof navLinks[0]) => {
-    if (isHomePage && link.section) {
+    if (link.section) {
       e.preventDefault();
-      const element = document.getElementById(link.section);
-      element?.scrollIntoView({ behavior: "smooth" });
+      navigateToSection(link.section);
       setIsMobileMenuOpen(false);
     }
   };
@@ -94,7 +125,13 @@ export const Navigation = () => {
               asChild
               className="shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
             >
-              <Link to="/contact" onClick={(e) => isHomePage && handleNavClick(e, navLinks[4])}>
+              <Link 
+                to="/contact" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateToSection("contact");
+                }}
+              >
                 Hire Me
               </Link>
             </Button>
@@ -133,7 +170,8 @@ export const Navigation = () => {
               <Link 
                 to="/contact" 
                 onClick={(e) => {
-                  if (isHomePage) handleNavClick(e, navLinks[4]);
+                  e.preventDefault();
+                  navigateToSection("contact");
                   setIsMobileMenuOpen(false);
                 }}
               >

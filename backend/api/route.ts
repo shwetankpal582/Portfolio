@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
-import dbConnect from "../../lib/dbConnect.js";
-import Message from "../../lib/Message.js";
+import { Request, Response } from 'express';
+import dbConnect from "../lib/dbConnect.js";
+import Message from "../lib/Message.js";
 
 interface ContactRequestBody {
   name: string;
@@ -9,9 +10,9 @@ interface ContactRequestBody {
   message: string;
 }
 
-export async function POST(req: Request) {
+export async function handleContact(req: Request, res: Response) {
   try {
-    const { name, email, subject, message } = (await req.json()) as ContactRequestBody;
+    const { name, email, subject, message } = req.body as ContactRequestBody;
 
     await dbConnect();
 
@@ -22,8 +23,8 @@ export async function POST(req: Request) {
       message,
     });
 
-    console.log("res",req);
-    console.log("newMessage",newMessage)
+    console.log("req", req);
+    console.log("newMessage", newMessage);
 
     await newMessage.save();
 
@@ -54,15 +55,11 @@ export async function POST(req: Request) {
 
     await transporter.sendMail(mailOptions);
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-    });
+    res.status(200).json({ success: true });
   } catch (error: any) {
     console.error("Email error:", error, error.stack);
     const errorMessage = error instanceof Error ? error.message : 'An unknown server error occurred.';
-    return new Response(JSON.stringify({ success: false, error: errorMessage }), {
-      status: 500,
-    });
+    res.status(500).json({ success: false, error: errorMessage });
   }
 }
 // Updated and fixed the contact form email sending issue.

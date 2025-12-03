@@ -11,7 +11,7 @@ export const Logo = ({ className = "" }: LogoProps) => {
     <Link to="/" className={`flex items-center gap-2 group ${className}`}>
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
-        <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center font-bold text-white text-xl">
+        <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center font-bold text-foreground text-xl">
           SP
         </div>
       </div>
