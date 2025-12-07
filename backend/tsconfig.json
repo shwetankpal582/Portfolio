@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "lib": [
+      "ESNext"
+    ],
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": [
+        "./lib/*"
+      ]
+    },
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "."
+  },
+  "include": [
+    "api/**/*.ts",
+    "lib/**/*.ts",
+    "server.ts"
+  ],
+  "ts-node": {
+    "esm": true
+  }
+}

@@ -56,9 +56,10 @@ export async function handleContact(req: Request, res: Response) {
     await transporter.sendMail(mailOptions);
 
     res.status(200).json({ success: true });
-  } catch (error: any) {
-    console.error("Email error:", error, error.stack);
-    const errorMessage = error instanceof Error ? error.message : 'An unknown server error occurred.';
+  } catch (error: unknown) {
+    const errorObj = error instanceof Error ? error : new Error("Unknown error");
+    console.error("Email error:", errorObj, errorObj.stack);
+    const errorMessage = errorObj.message;
     res.status(500).json({ success: false, error: errorMessage });
   }
 }
