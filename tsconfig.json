@@ -1,11 +1,16 @@
 {
   "files": [],
-  "references": [
-    {
-      "path": "./frontend/tsconfig.json"
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./frontend/src/*"]
     },
-    {
-      "path": "./backend/tsconfig.json"
-    }
-  ]
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false
+  }
 }
