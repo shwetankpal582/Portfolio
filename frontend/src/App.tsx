@@ -1,15 +1,24 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Vortex } from "@/components/21st.dev/vortex";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Services from "@/pages/Services";
-import Projects from "@/pages/Projects";
-import Contact from "@/pages/Contact";
-import NotFound from "@/pages/NotFound";
+// Lazy load pages for optimization
+const Home = lazy(() => import("@/pages/Home"));
+const About = lazy(() => import("@/pages/About"));
+const Services = lazy(() => import("@/pages/Services"));
+const Projects = lazy(() => import("@/pages/Projects"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-primary border-r-2 border-r-transparent"></div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -18,19 +27,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <Vortex
-        containerClassName="min-h-screen"
-        className="min-h-screen"
-        particleCount={650}
-        rangeY={160}
-        baseHue={210}
-        baseSpeed={0.2}
-        rangeSpeed={1.4}
-        baseRadius={1.2}
-        rangeRadius={2.8}
-        backgroundColor="#020617"
-      >
-        <BrowserRouter>
+      <BrowserRouter>
+        <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -39,8 +37,8 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
-      </Vortex>
+        </Suspense>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
