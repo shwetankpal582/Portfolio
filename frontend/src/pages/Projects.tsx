@@ -38,6 +38,13 @@ const Projects = () => {
       techStack: ["React", "Tailwind", "Figma", "UI/UX"],
       repoLink: "https://github.com/shwetankpal582",
       liveLink: ""
+    },
+    {
+      title: "Portfolio Website",
+      description: "Personal portfolio website showcasing modern web development, clean UI design, responsive layouts, and performance-focused user experiences.",
+      techStack: ["Next.js", "Tailwind CSS", "React", "JavaScript (ES6+)"],
+      repoLink: "https://github.com/shwetankpal582/Portfolio",
+      liveLink: "https://pal-folio-glass.vercel.app/"
     }
   ];
 
