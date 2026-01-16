@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from 'resend';
 import { Request, Response } from 'express';
 import dbConnect from "../lib/dbConnect.js";
 import Message from "../lib/Message.js";
@@ -10,57 +10,54 @@ interface ContactRequestBody {
   message: string;
 }
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function handleContact(req: Request, res: Response) {
   try {
     const { name, email, subject, message } = req.body as ContactRequestBody;
 
     await dbConnect();
 
+    // Save to database
     const newMessage = new Message({
       name,
       email,
       subject,
       message,
     });
-
-    console.log("req", req);
-    console.log("newMessage", newMessage);
-
     await newMessage.save();
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error("Please define the EMAIL_USER and EMAIL_PASS environment variables.");
+    console.log("Message saved to DB:", newMessage);
+
+    if (!process.env.RESEND_API_KEY) {
+      console.warn("RESEND_API_KEY is missing. Email will not be sent.");
+        return res.status(200).json({ success: true, warning: "Email not sent (missing key)" });
     }
-
-    console.log("EMAIL_USER is defined:", !!process.env.EMAIL_USER);
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+    
+    // Send email using Resend
+    const data = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>', // Update this to your verified domain later
+      to: process.env.EMAIL_USER || 'delivered@resend.dev', // Fallback for testing
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
+      html: `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    console.log("Resend API response:", data);
 
-    res.status(200).json({ success: true });
+    if (data.error) {
+        throw new Error(data.error.message);
+    }
+
+    res.status(200).json({ success: true, data });
   } catch (error: unknown) {
     const errorObj = error instanceof Error ? error : new Error("Unknown error");
-    console.error("Email error:", errorObj, errorObj.stack);
-    const errorMessage = errorObj.message;
-    res.status(500).json({ success: false, error: errorMessage });
+    console.error("Email error:", errorObj);
+    res.status(500).json({ success: false, error: errorObj.message });
   }
 }
-// Updated and fixed the contact form email sending issue.

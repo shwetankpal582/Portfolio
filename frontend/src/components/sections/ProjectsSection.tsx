@@ -60,7 +60,7 @@ export const ProjectsSection = () => {
       category: "fullstack",
       image: "/placeholder.svg"
     }
-    
+
   ];
 
   const categories = [
@@ -113,6 +113,7 @@ export const ProjectsSection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <ProjectCard
+                  id={String(index + 1)}
                   title={project.title}
                   description={project.description}
                   techStack={project.techStack}

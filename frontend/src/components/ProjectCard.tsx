@@ -1,7 +1,9 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
+  id: string;
   title: string;
   description: string;
   techStack: string[];
@@ -11,6 +13,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({
+  id,
   title,
   description,
   techStack,
@@ -73,17 +76,23 @@ export const ProjectCard = ({
           </Button>
 
           {liveLink ? (
-            <Button size="sm" className="flex-1 group/btn" asChild>
+            <Button size="sm" variant="outline" className="flex-1 group/btn" asChild>
               <a href={liveLink} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-4 w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                 Live
               </a>
             </Button>
           ) : (
-            <Button size="sm" className="flex-1" disabled>
+            <Button size="sm" variant="outline" className="flex-1" disabled>
               Not Deployed
             </Button>
           )}
+
+          <Button size="sm" className="flex-1" asChild>
+            <Link to={`/projects/${id}`}>
+              Details
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ export const Navigation = () => {
         }
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
@@ -93,9 +93,8 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "glass-strong shadow-2xl shadow-primary/5" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "glass-strong shadow-2xl shadow-primary/5" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -108,25 +107,23 @@ export const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 onClick={(e) => handleNavClick(e, link)}
-                className={`text-sm font-medium transition-all hover:text-primary relative group ${
-                  isActive(link)
-                    ? "text-primary"
-                    : "text-foreground/80"
-                }`}
+                className={`text-sm font-medium transition-all hover:text-primary relative group ${isActive(link)
+                  ? "text-primary"
+                  : "text-foreground/80"
+                  }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary transition-transform origin-left ${
-                  isActive(link) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                }`} />
+                <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary transition-transform origin-left ${isActive(link) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`} />
               </Link>
             ))}
-            <Button 
-              size="sm" 
+            <Button
+              size="sm"
               asChild
               className="shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
             >
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToSection("contact");
@@ -137,13 +134,14 @@ export const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex md:hidden items-center gap-4">
+            <button
+              className="text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -157,18 +155,17 @@ export const Navigation = () => {
                   handleNavClick(e, link);
                   setIsMobileMenuOpen(false);
                 }}
-                className={`block text-sm font-medium transition-colors hover:text-primary py-2 ${
-                  isActive(link)
-                    ? "text-primary"
-                    : "text-foreground/80"
-                }`}
+                className={`block text-sm font-medium transition-colors hover:text-primary py-2 ${isActive(link)
+                  ? "text-primary"
+                  : "text-foreground/80"
+                  }`}
               >
                 {link.name}
               </Link>
             ))}
             <Button className="w-full" asChild>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateToSection("contact");

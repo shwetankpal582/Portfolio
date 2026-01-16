@@ -20,11 +20,9 @@ All colors MUST be HSL.
     --popover: 229 40% 12%;
     --popover-foreground: 210 40% 98%;
 
-    /* Electric cyan accent */
     --primary: 189 94% 43%;
     --primary-foreground: 210 40% 98%;
 
-    /* Violet secondary */
     --secondary: 258 90% 66%;
     --secondary-foreground: 210 40% 98%;
 
@@ -34,7 +32,7 @@ All colors MUST be HSL.
     --accent: 258 90% 66%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 229 30% 18%;
@@ -57,28 +55,38 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: linear-gradient(135deg, hsl(229 47% 7%) 0%, hsl(258 47% 10%) 100%);
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  /* Global Smooth Transition */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
 }
 
 @layer utilities {
+
   /* Glassmorphism utilities */
   .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
   }
 
   .glass-strong {
-    background: rgba(255, 255, 255, 0.08);
+    background: hsl(var(--glass-bg));
+    /* Use the same variable but maybe we need a distinct one if intended to be stronger? For now reusing or we can add a --glass-bg-strong */
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid hsl(var(--glass-border));
   }
 
   /* Gradient text */
@@ -89,5 +97,61 @@ All colors MUST be HSL.
   /* Smooth transitions */
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Shimmer Animation for Progress Bars */
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg,
+        rgba(245, 245, 220, 0.8) 0%,
+        /* Beige */
+        rgba(255, 255, 255, 1) 50%,
+        /* White */
+        rgba(245, 245, 220, 0.8) 100%
+        /* Beige */
+      );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes float-particle {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+
+    20% {
+      opacity: 0.8;
+    }
+
+    50% {
+      transform: translate(100px, -100px);
+      /* Move diagonally */
+      opacity: 0.4;
+    }
+
+    80% {
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: translate(20px, -200px);
+      opacity: 0;
+    }
+  }
+
+  .animate-float-particle {
+    animation-name: float-particle;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
 }
