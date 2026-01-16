@@ -33,7 +33,7 @@ export const HeroSection = () => {
                   <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg text-foreground">
                     <span className="gradient-text">Shwetank Pal</span>
                   </h1>
-                  <p className="text-xl md:text-2xl text-black font-semibold drop-shadow-md">
+                  <p className="text-xl md:text-2xl text-rgb(198, 200, 206) font-semibold drop-shadow-md">
                     Frontend Engineer & UI/UX Designer
                   </p>
                 </div>
