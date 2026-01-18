@@ -33,21 +33,21 @@ export const ProjectCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Default Image */}
+        {/* Base Layer: Static Image */}
         <img
           src={image || "/placeholder.svg"}
           alt={title}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${isHovered && liveLink ? 'opacity-0' : 'opacity-100'}`}
+          className="absolute inset-0 w-full h-full object-cover"
         />
 
-        {/* Live Preview Overlay (Only on Hover) */}
-        {liveLink && isHovered && (
-          <div className="absolute inset-0 flex items-center justify-center bg-background/50 animate-in fade-in duration-300">
-            <div className="absolute w-[200%] h-[200%] origin-center scale-[0.5] pointer-events-none">
+        {/* Top Layer: Live Preview (If available) */}
+        {liveLink && (
+          <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 bg-background/10">
+            <div className={`absolute w-[200%] h-[200%] origin-center scale-[0.5] ${isHovered ? 'pointer-events-auto' : 'pointer-events-none'}`}>
               <iframe
                 src={liveLink}
                 title={title}
-                loading="lazy"
+                loading="eager"
                 className="w-full h-full border-0"
                 sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
               ></iframe>
@@ -55,10 +55,10 @@ export const ProjectCard = ({
           </div>
         )}
 
-        {/* Hover Hint Badge */}
+        {/* Hover Hint Badge (Only for live links) */}
         {liveLink && !isHovered && (
           <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-            Hover to Preview
+            Active Preview
           </div>
         )}
       </div>
