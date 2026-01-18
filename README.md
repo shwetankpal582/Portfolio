@@ -1,4 +1,4 @@
-# Pal Folio Glass
+# Portfolio
 
 A modern, glassmorphism-themed personal portfolio built with React and Vite, featuring responsive UI components, sectioned pages (Home, About, Projects, Services, Contact), and a styled, accessible design.
 
