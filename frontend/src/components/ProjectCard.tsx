@@ -26,7 +26,13 @@ export const ProjectCard = ({
 
       {/* Perfectly Scaled Windowed Preview */}
       <div className="relative overflow-hidden rounded-t-2xl bg-muted aspect-[16/9]">
-        {liveLink ? (
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : liveLink ? (
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Core trick: actual full-size iframe scaled down proportionally */}
             <div className="absolute w-[200%] h-[200%] origin-center scale-[0.5] pointer-events-none">
@@ -41,7 +47,7 @@ export const ProjectCard = ({
           </div>
         ) : (
           <img
-            src={image || "/placeholder.svg"}
+            src="/placeholder.svg"
             alt={title}
             className="w-full h-full object-cover"
           />
@@ -88,11 +94,11 @@ export const ProjectCard = ({
             </Button>
           )}
 
-          <Button size="sm" className="flex-1" asChild>
+          {/* <Button size="sm" className="flex-1" asChild>
             <Link to={`/projects/${id}`}>
               Details
             </Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>
