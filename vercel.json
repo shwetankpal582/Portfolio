@@ -17,7 +17,11 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
+<<<<<<< HEAD
           "value": "frame-ancestors 'self' *"
+=======
+          "value": "frame-ancestors 'self' https://pal-folio-glass.vercel.app"
+>>>>>>> ce25085d897e956ae65c4b8876c94de9b1d5fc7b
         },
         {
           "key": "X-Content-Type-Options",
