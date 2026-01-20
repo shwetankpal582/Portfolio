@@ -44,7 +44,7 @@ const Projects = () => {
       description: "Personal portfolio website showcasing modern web development, clean UI design, responsive layouts, and performance-focused user experiences.",
       techStack: ["Next.js", "Tailwind CSS", "React", "JavaScript (ES6+)"],
       repoLink: "https://github.com/shwetankpal582/Portfolio",
-      liveLink: "https://pal-folio-glass.vercel.app/"
+      liveLink: "https://shwetank-pal.vercel.app/"
     }
   ];
 
@@ -97,4 +97,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
