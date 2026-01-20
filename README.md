@@ -2,7 +2,7 @@
 
 A modern, glassmorphism-themed personal portfolio built with React and Vite, featuring responsive UI components, sectioned pages (Home, About, Projects, Services, Contact), and a styled, accessible design.
 
-**Live URL:** [https://pal-folio-glass.vercel.app/](https://pal-folio-glass.vercel.app/)
+**Live URL:** [https://shwetank-pal.vercel.app/](https://shwetank-pal.vercel.app/)
 
 ## Contact Information
 

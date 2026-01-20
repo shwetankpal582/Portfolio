@@ -44,14 +44,14 @@ const Projects = () => {
       description: "Personal portfolio website showcasing modern web development, clean UI design, responsive layouts, and performance-focused user experiences.",
       techStack: ["Next.js", "Tailwind CSS", "React", "JavaScript (ES6+)"],
       repoLink: "https://github.com/shwetankpal582/Portfolio",
-      liveLink: "https://pal-folio-glass.vercel.app/"
+      liveLink: "https://shwetank-pal.vercel.app/"
     }
   ];
 
   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto space-y-16">
@@ -83,7 +83,7 @@ const Projects = () => {
             <div className="glass-strong rounded-3xl p-12 text-center space-y-6 animate-fade-in-up">
               <h2 className="text-3xl font-bold">Interested in Working Together?</h2>
               <p className="text-foreground/70 max-w-2xl mx-auto">
-                These projects demonstrate my commitment to quality code and user-centered design. 
+                These projects demonstrate my commitment to quality code and user-centered design.
                 Let's discuss how I can contribute to your team or project.
               </p>
             </div>
