@@ -20,7 +20,7 @@
 <<<<<<< HEAD
           "value": "frame-ancestors 'self' *"
 =======
-          "value": "frame-ancestors 'self' https://pal-folio-glass.vercel.app"
+          "value": "frame-ancestors 'self' https://shwetank-pal.vercel.app/"
 >>>>>>> ce25085d897e956ae65c4b8876c94de9b1d5fc7b
         },
         {
