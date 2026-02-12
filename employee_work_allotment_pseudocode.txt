@@ -1,0 +1,41 @@
+PSEUDOCODE: Employee Work Allotment Decision System
+====================================================
+
+START
+    // Read input from user
+    READ age
+    READ sex          // 'M' for Male, 'F' for Female
+    READ marital_status  // 'Y' for Yes (Married), 'N' for No (Unmarried)
+    
+    // Handle invalid cases first
+    IF age < 0 THEN
+        PRINT "Invalid age"
+    ELSE IF age < 20 THEN
+        PRINT "Age limit is less"
+    ELSE IF age > 60 THEN
+        PRINT "Age limit is high"
+    ELSE IF age >= 20 AND age <= 60 THEN
+        // Valid age range - proceed with work allotment logic
+        
+        IF sex == 'F' THEN
+            // Female employees (married or unmarried) work in urban areas only
+            PRINT "Work in urban areas only"
+        ELSE IF sex == 'M' THEN
+            // Male employees - check marital status
+            IF marital_status == 'Y' THEN
+                // Married male employees work in urban areas
+                PRINT "Work in urban areas"
+            ELSE IF marital_status == 'N' THEN
+                // Unmarried male employees - check age range
+                IF age >= 20 AND age <= 40 THEN
+                    // Unmarried male, age 20-40: work anywhere
+                    PRINT "Work anywhere"
+                ELSE IF age > 40 AND age <= 60 THEN
+                    // Unmarried male, age 41-60: work in urban areas
+                    PRINT "Work in urban areas"
+                END IF
+            END IF
+        END IF
+    END IF
+    
+END
